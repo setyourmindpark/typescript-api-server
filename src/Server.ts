@@ -44,7 +44,8 @@ export class Server {
     }
 
     private setRouter() : void {
-        this.app.use('/users', UserRouter);
+        this.app.use('/users', UserRouter.router);
+        //...
     }
 
 }

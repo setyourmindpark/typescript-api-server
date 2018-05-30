@@ -16,11 +16,9 @@ try {
             
         });
         cluster.on('listening', (worker, address) => {
-            // logger.info('created worker [ ' + worker.process.pid + ' ] is listening port : ' + address.port);
             console.log('created worker [ ' + worker.process.pid + ' ] is listening port : ' + address.port)
         });
         cluster.on('exit', (worker, code, signal) => {
-            // logger.info('died worker id : ' + worker.process.pid);
             console.log('died worker id : ' + worker.process.pid)
             cluster.fork();
         })
